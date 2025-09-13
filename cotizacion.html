@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización CELCO QUÍMICA</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            font-size: 10px;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid black;
+            padding: 15px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-section {
+            flex: 1;
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            font-size: 8px;
+        }
+        
+        .company-info {
+            font-weight: bold;
+            text-align: left;
+        }
+        
+        .form-code {
+            text-align: right;
+            font-size: 8px;
+        }
+        
+        .client-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        
+        .client-left, .client-right {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 3px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            min-width: 80px;
+        }
+        
+        .info-value {
+            flex: 1;
+            border-bottom: 1px solid black;
+            padding-left: 5px;
+        }
+        
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 8px;
+        }
+        
+        .products-table th,
+        .products-table td {
+            border: 1px solid black;
+            padding: 4px 2px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .products-table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .products-table .desc-col {
+            text-align: left;
+            width: 35%;
+        }
+        
+        .products-table .marca-col {
+            width: 12%;
+        }
+        
+        .products-table .unidad-col {
+            width: 8%;
+        }
+        
+        .products-table .cantidad-col {
+            width: 6%;
+        }
+        
+        .products-table .precio-col {
+            width: 10%;
+        }
+        
+        .products-table .descuento-col {
+            width: 8%;
+        }
+        
+        .products-table .precio-desc-col {
+            width: 10%;
+        }
+        
+        .products-table .total-col {
+            width: 11%;
+        }
+        
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin: 10px 0;
+        }
+        
+        .totals-table {
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+        
+        .totals-table td {
+            border: 1px solid black;
+            padding: 3px 8px;
+        }
+        
+        .totals-table .label-col {
+            font-weight: bold;
+            text-align: right;
+            background-color: #f0f0f0;
+        }
+        
+        .totals-table .value-col {
+            text-align: right;
+            min-width: 80px;
+        }
+        
+        .total-words {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .terms-section {
+            margin-top: 20px;
+            border-top: 1px solid black;
+            padding-top: 10px;
+        }
+        
+        .terms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .term-item {
+            margin-bottom: 8px;
+        }
+        
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+        
+        .signature-box {
+            text-align: center;
+            border-top: 1px solid black;
+            padding-top: 5px;
+            min-width: 200px;
+        }
+        
+        .observations {
+            margin: 15px 0;
+        }
+        
+        .underline {
+            border-bottom: 1px solid black;
+            padding-left: 5px;
+            display: inline-block;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">LOGO</div>
+                <div class="company-info">
+                    CELCO QUÍMICA, S.A.<br>
+                    AV. A 2-85 ZONA 6 VILLA NUEVA GUATEMALA
+                </div>
+            </div>
+            <div class="form-code">
+                Código Versión<br>
+                F-DV-13 15252 02
+            </div>
+        </div>
+
+        <!-- Client Information -->
+        <div class="client-info">
+            <div class="client-left">
+                <div class="info-row">
+                    <span class="info-label">NOMBRE:</span>
+                    <span class="info-value">MI EMPRESA, SOCIEDAD ANÓNIMA</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">DIRECCIÓN:</span>
+                    <span class="info-value">1 RA. AV. "A" 2-65 ZONA 6 VILLA NUEVA, GUATEMALA</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">ATENCIÓN A:</span>
+                    <span class="info-value">HOSPITAL REGIONAL</span>
+                </div>
+                <div style="margin-left: 80px; font-size: 8px;">
+                    EVENIDA GENERAL UBICO<br>
+                    DEPARTAMENTO DE COMPRAS
+                </div>
+            </div>
+            <div class="client-right">
+                <div class="info-row">
+                    <span class="info-label">TELÉFONO:</span>
+                    <span class="info-value">2222-3333</span>
+                    <span style="margin-left: 10px;">NIT:</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">NOG</span>
+                    <span class="info-value">55553333</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">ASESOR DE VENTAS:</span>
+                    <span class="info-value">JUAN PEREZ</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">CORREO ELECTRÓNICO:</span>
+                    <span class="info-value">JUAN@PRUEBA.COM</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">TELÉFONO:</span>
+                    <span class="info-value">321313213</span>
+                    <span style="margin-left: 10px;">EXT:</span>
+                    <span class="info-value" style="min-width: 40px;">222</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">CELULAR:</span>
+                    <span class="info-value">55554444</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">FECHA:</span>
+                    <span class="info-value">09/09/2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Table -->
+        <table class="products-table" id="productsTable">
+            <thead>
+                <tr>
+                    <th class="marca-col">MARCA</th>
+                    <th class="desc-col">DESCRIPCIÓN DEL PRODUCTO</th>
+                    <th class="unidad-col">UNIDAD DE MEDIDA</th>
+                    <th class="cantidad-col">CANTIDAD</th>
+                    <th class="precio-col">PRECIO UNITARIO</th>
+                    <th class="descuento-col">Descuento %</th>
+                    <th class="precio-desc-col">Precio con descuento</th>
+                    <th class="total-col">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody id="productsBody">
+                <tr>
+                    <td>ESTERILIX ARVI</td>
+                    <td class="desc-col">DESINFECTANTE HOSPITALARIO CON INGREDIENTES INHERTES CON CLORURO DE N-AQUIL DIMETILBENCILAMONIO, GALÓN , GALÓN .</td>
+                    <td>GALÓN</td>
+                    <td>10</td>
+                    <td>Q1,000.00</td>
+                    <td>10</td>
+                    <td>Q100.00</td>
+                    <td>Q10,000.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Totals Section -->
+        <div class="totals-section">
+            <table class="totals-table">
+                <tr>
+                    <td class="label-col"></td>
+                    <td class="value-col">Q0.00</td>
+                </tr>
+                <tr>
+                    <td class="label-col">TOTAL</td>
+                    <td class="value-col">Q10,000.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Total in Words -->
+        <div class="total-words">
+            <strong>TOTAL EN LETRAS:</strong><br>
+            QUINCE MIL SETECIENTOS CINCUENTA QUETZALES EXACTOS
+        </div>
+
+        <!-- Observations -->
+        <div class="observations">
+            <strong>OBSERVACIONES :</strong><br>
+            <span class="underline">todas las observaciones</span>
+        </div>
+
+        <!-- Terms Section -->
+        <div class="terms-section">
+            <div class="terms-grid">
+                <div>
+                    <div class="term-item">
+                        <strong>ENTREGA:</strong> cinco (5) días hábiles despues de recibir orden de compra
+                    </div>
+                    <div class="term-item">
+                        <strong>RÉGIMEN:</strong> SUJETO A PAGOS TRIMESTRALES
+                    </div>
+                    <div class="term-item">
+                        <strong>VIGENCIA DE LA OFERTA:</strong> TREINTA (30) DÍAS
+                    </div>
+                </div>
+                <div>
+                    <div class="term-item">
+                        <strong>CHEQUE A NOMBRE DE:</strong> CELCO QUÍMICA, S. A.
+                    </div>
+                    <div class="term-item">
+                        <strong>NÚMERO DE IDENTIFICACIÓN TRIBUTARIA:</strong> 10754559-4
+                    </div>
+                    <div class="term-item">
+                        <strong>AGENTES RETENEDOR DE IVA</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div>
+                <div style="margin-bottom: 30px;">ATENTAMENTE</div>
+                <div class="signature-box">
+                    ASESOR (A) DE VENTAS NOMBRE Y FIRMA
+                </div>
+            </div>
+            <div class="signature-box">
+                ACEPTADO POR EL CLIENTE
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para agregar productos dinámicamente
+        function addProduct(marca, descripcion, unidad, cantidad, precioUnitario, descuento, precioDescuento, total) {
+            const tbody = document.getElementById('productsBody');
+            const row = tbody.insertRow();
+            
+            row.innerHTML = `
+                <td>${marca}</td>
+                <td class="desc-col">${descripcion}</td>
+                <td>${unidad}</td>
+                <td>${cantidad}</td>
+                <td>${precioUnitario}</td>
+                <td>${descuento}</td>
+                <td>${precioDescuento}</td>
+                <td>${total}</td>
+            `;
+        }
+
+        // Función para limpiar la tabla de productos
+        function clearProducts() {
+            const tbody = document.getElementById('productsBody');
+            tbody.innerHTML = '';
+        }
+
+        // Función para cargar productos desde un array
+        function loadProducts(products) {
+            clearProducts();
+            products.forEach(product => {
+                addProduct(
+                    product.marca,
+                    product.descripcion,
+                    product.unidad,
+                    product.cantidad,
+                    product.precioUnitario,
+                    product.descuento,
+                    product.precioDescuento,
+                    product.total
+                );
+            });
+        }
+
+        // Ejemplo de uso:
+        // const productos = [
+        //     {
+        //         marca: "ESTERILIX ARVI",
+        //         descripcion: "DESINFECTANTE HOSPITALARIO CON INGREDIENTES INHERTES CON CLORURO DE N-AQUIL DIMETILBENCILAMONIO, GALÓN , GALÓN .",
+        //         unidad: "GALÓN",
+        //         cantidad: "10",
+        //         precioUnitario: "Q1,000.00",
+        //         descuento: "10",
+        //         precioDescuento: "Q100.00",
+        //         total: "Q10,000.00"
+        //     }
+        // ];
+        // loadProducts(productos);
+    </script>
+</body>
+</html>
